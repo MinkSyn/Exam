@@ -280,7 +280,7 @@ def triplet_trans(sample: tuple):
     positive = input_var[temp_batch:(temp_batch * 2)] # Size 64x3x224x224
     negative = input_var[-temp_batch:]
 
-    return anchor, positive, negative
+    return anchor, positive, negative, target_var
 
 
 if __name__ == '__main__':
@@ -298,18 +298,18 @@ if __name__ == '__main__':
     ])
     count = 0
     batch_size = 64
+    train_loader = DataLoader(root_path=ROOT+'/Train',
+                                  batch_size=batch_size, num_workers=8, transforms=transform)
 
     epochs = 1
     for epoch in range(epochs):
 
         print ('=' * 20)
-        train_loader = DataLoader(root_path=ROOT+'/Train',
-                                  batch_size=batch_size, num_workers=8, transforms=transform)
         
         for idx, sample in enumerate(train_loader):
             try:
                 print ('load data %d' % (idx))
-                anchor, positive, negative = triplet_trans(sample)
+                anchor, positive, negative, labels = triplet_trans(sample)
 
                 assert anchor.size() == positive.size()
                 assert anchor.size() == negative.size()
