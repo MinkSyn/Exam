@@ -28,7 +28,7 @@ def pil_loader(path):
         return img.convert('RGB')
 
 
-class DataLoader(object):
+class DataLoader_Triplet(object):
     def __init__(self, root_path, transforms=None, batch_size=1, shuffle=True, num_workers=1):
         self.work_path = root_path
         self.transforms = None
@@ -298,7 +298,7 @@ if __name__ == '__main__':
     ])
     count = 0
     batch_size = 64
-    train_loader = DataLoader(root_path=ROOT+'/Train',
+    train_loader = DataLoader_Triplet(root_path=ROOT+'/Train',
                                   batch_size=batch_size, num_workers=8, transforms=transform)
 
     epochs = 1
