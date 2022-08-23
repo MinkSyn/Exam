@@ -271,7 +271,7 @@ def triplet_trans(sample: tuple):
     sample_input = torch.cat(new_x, 0)
     sample_target = torch.cat(new_y, 0)
 
-    target = sample_target.cuda(async=True)
+    target = sample_target#.cuda(async=True)
     input_var = torch.autograd.Variable(sample_input)
     target_var = torch.autograd.Variable(target)
     
