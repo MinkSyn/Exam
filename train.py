@@ -314,7 +314,7 @@ def validate(val_loader, model, criterion):
         # for index in range(len(t_l)):
         #     t_la = t_l[index]
         #     label_map[t_la]+=1
-        target = target.cuda(async=True)
+        target = target#.cuda(async=True)
         input_var = torch.autograd.Variable(input.cuda())
         target_var = torch.autograd.Variable(target.cuda())
         with torch.no_grad():
