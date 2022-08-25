@@ -256,7 +256,7 @@ def train(train_loader, model, criterion1, criterion2, optimizer, epoch):
         # print (sample_target[:batch_size])
         # print (sample_target[batch_size:(batch_size * 2)])
         # print (sample_target[-batch_size:])
-        target = sample_target.cuda(async=True)
+        target = sample_target#.cuda()
         input_var = torch.autograd.Variable(sample_input.cuda())
         target_var = torch.autograd.Variable(target.cuda())
         # compute output
