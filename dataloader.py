@@ -275,12 +275,7 @@ def triplet_trans(sample: tuple):
     input_var = torch.autograd.Variable(sample_input)
     target_var = torch.autograd.Variable(target)
     
-    # compute output
-    anchor = input_var[:temp_batch] # Size 64x3x224x224
-    positive = input_var[temp_batch:(temp_batch * 2)] # Size 64x3x224x224
-    negative = input_var[-temp_batch:]
-
-    return anchor, positive, negative, target_var
+    return input_var, target_var
 
 
 if __name__ == '__main__':
