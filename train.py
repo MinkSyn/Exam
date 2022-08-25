@@ -22,7 +22,7 @@ import wideresnet
 # import BilinearCNN
 # from zrmodel import LeNet32
 
-from data_loader import DataLoader_Triplet
+from dataloader import DataLoader_Triplet
 
 model_names = sorted(name for name in models.__dict__
                      if name.islower() and not name.startswith("__")
