@@ -275,7 +275,7 @@ def triplet_trans(sample: tuple):
     input_var = torch.autograd.Variable(sample_input)
     target_var = torch.autograd.Variable(target)
     
-    return input_var, target_var
+    return input_var, target_var, temp_batch
 
 
 if __name__ == '__main__':
