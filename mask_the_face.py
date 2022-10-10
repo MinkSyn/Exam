@@ -109,7 +109,7 @@ for i, entry in enumerate(mask_code):
 
 # Check if path is file or directory or none
 is_directory, is_file, is_other = check_path(args.path)
-print(is_directory, is_file, is_others)
+print(is_directory, is_file, is_other)
 display_MaskTheFace()
 
 if is_directory:
