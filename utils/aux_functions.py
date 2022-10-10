@@ -453,6 +453,8 @@ def check_path(path):
     is_directory = False
     is_file = False
     is_other = False
+    print(path)
+    print(os.path.isdir(path))
     if os.path.isdir(path):
         is_directory = True
     elif os.path.isfile(path):
